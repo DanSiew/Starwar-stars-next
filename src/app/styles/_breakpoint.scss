@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "sass:meta";
+
+$breakpoints: (
+  'small': (
+    min-width: 0,
+  ),
+  'medium': (
+    min-width: 720px,
+  ),
+  'large': (
+    min-width: 992px,
+  ),
+) !default;
+
+@mixin ds-screen-size($breakpoint) {
+  // If the key exists in the map
+  @if map.has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{meta.inspect(map.get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    // If the key doesn't exist in the map
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+      + 'Available breakpoints are: #{map.keys($breakpoints)}.';
+  }
+}

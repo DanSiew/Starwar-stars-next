@@ -1,0 +1,31 @@
+@use 'styles/breakpoint' as *;
+
+.page {
+  min-height: 100svh;
+  font-family: var(--font-geist-sans);
+}
+
+
+
+.main {
+  margin: 16px;
+  min-height: 100vh;
+  align-items: center;
+
+  @include ds-screen-size('medium') {
+    max-width: 900px;
+  }
+
+  @include ds-screen-size('large') {
+    margin: 16px auto;
+    max-width: 900px;
+    min-width: 900px;
+  }
+
+  
+}
+
+.buttonlist {
+  width: 50%;
+  margin: 16px auto;
+}

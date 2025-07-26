@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+
+  .header-text {
+    margin: auto 32px;
+    font-size: 20px;
+  }
+  nav {
+    margin: 0 32px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+  }
+
+  li {
+    float: left;
+  }
+
+  li .link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  /* Change the link color to #111 (black) on hover */
+  li .link:hover {
+    background-color: #111;
+  }
+}

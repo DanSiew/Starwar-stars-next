@@ -1,0 +1,26 @@
+@use '../styles/breakpoint' as *;
+
+.main {
+  margin: 16px;
+  min-height: 100vh;
+  align-items: center;
+
+  @include ds-screen-size('medium') {
+    max-width: 900px;
+     margin: 32px auto;
+  }
+
+  @include ds-screen-size('large') {
+    margin: 16px auto;
+    max-width: 900px;
+    min-width: 900px;
+  }
+}
+
+.container {
+  display: flex;
+  
+  Button {
+    margin: 0 8px;
+  }
+}

@@ -1,0 +1,34 @@
+@use '../../styles/breakpoint' as *;
+
+$primary-01: #001cb0;
+.pagination {
+    display: flex;
+    width: 90%;
+}
+
+.pagination button {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination button.active {
+    background-color:$primary-01;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.btn-words {
+    min-width: 100px;
+
+    @include ds-screen-size('medium') {
+    min-width: 0;
+}
+}
+
