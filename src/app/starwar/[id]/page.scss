@@ -7,7 +7,7 @@
 
   @include ds-screen-size('medium') {
     max-width: 900px;
-     margin: 32px auto;
+    margin: 32px auto;
   }
 
   @include ds-screen-size('large') {
@@ -20,4 +20,8 @@
     margin: 32px 0;
   }
 
+  pending {
+    width: 50%;
+    margin: auto;
+  }
 }

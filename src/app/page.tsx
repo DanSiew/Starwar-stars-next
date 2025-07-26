@@ -9,6 +9,8 @@ import { AppDispatch, RootState } from "./store/store";
 import { loadPeopleData } from "./store/features/peopleSlice";
 import PageNumber from "./components/page-numbers/pageNumber";
 import useWindowSize from "@rooks/use-window-size";
+import Loading from "./components/loading/loading";
+import Alert from "./components/alert/alert";
 
 export default function Home() {
   const { innerWidth } = useWindowSize();
@@ -53,15 +55,13 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div>
-          {starwarState && starwarState.status === "pending"
-            ? "Loading..."
-            : ""}
+        <div className={styles.pending}>
+          {starwarState && starwarState.status === "pending" ? <Loading /> : ""}
         </div>
         <div>
-          {starwarState &&
-            starwarState.status === "failed" &&
-            "Something went wrong!"}
+          {starwarState && starwarState.status === "failed" && (
+            <Alert alertText="Something gone wrong! Please try again" type="danger" />
+          )}
         </div>
         {starwarState && starwarState.status === "succeeded" && (
           <StarwarPeople starwarState={starwarState} getPeople={handleClick} />

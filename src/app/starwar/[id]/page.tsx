@@ -8,6 +8,8 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Loading from "@/app/components/loading/loading";
+import Alert from "@/app/components/alert/alert";
 
 function StarwarPage() {
   const params = useParams<{ id: string }>();
@@ -27,13 +29,13 @@ function StarwarPage() {
   return (
     <main className="main">
       <h1>Starwars star</h1>
-      <div>
-        {peopleState && peopleState.status === "pending" ? "Loading..." : ""}
+      <div className="pending">
+        {peopleState && peopleState.status === "pending" ? <Loading /> : ""}
       </div>
       <div>
         {peopleState &&
           peopleState.status === "failed" &&
-          "Something went wrong!"}
+          <Alert alertText="Something gone wrong! Please try again" type="danger" />}
       </div>
       {data && (
         <>
