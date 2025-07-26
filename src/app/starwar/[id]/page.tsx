@@ -73,7 +73,7 @@ function StarwarPage() {
             size="medium"
             buttonType="primary"
             index={0}
-            handleClick={() => console.log()}
+            handleClick={() => ""}
           />
         </Link>
       </section>
