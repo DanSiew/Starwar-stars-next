@@ -1,5 +1,5 @@
 
-##Starwars
+## Starwars
 This application is to demonstrate Next.js using Redux
 
 ## Getting Started
