@@ -6,7 +6,7 @@ export default function PageNumber(props: {
   windowWidth: number;
   handleFetch: (numPage: number) => void;
 }) {
-  const mobile = props.windowWidth <= 375;
+  const smallWidth = props.windowWidth <= 720;
 
   return (
     <div className="pagination">
@@ -14,9 +14,9 @@ export default function PageNumber(props: {
         disabled={props.currentPage === 1}
         onClick={() => props.handleFetch(props.currentPage - 1)}
       >
-        {mobile ? "Previous" : "<"}
+        {smallWidth ? "Previous" : "<"}
       </button>
-      {!mobile &&
+      {!smallWidth &&
         props.pageNumber.length > 0 &&
         props.pageNumber.map((numPage: number, key: number) => (
           <button
@@ -31,7 +31,7 @@ export default function PageNumber(props: {
         disabled={props.currentPage === props.pageNumber.length}
         onClick={() => props.handleFetch(props.currentPage + 1)}
       >
-        {mobile ? "Next" : ">"}
+        {smallWidth ? "Next" : ">"}
       </button>
     </div>
   );
