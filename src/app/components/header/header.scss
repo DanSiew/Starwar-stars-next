@@ -1,3 +1,5 @@
+@use '../../styles/breakpoint' as *;
+
 header {
   display: flex;
   flex-direction: row;
@@ -6,8 +8,12 @@ header {
   color: white;
 
   .header-text {
+    display: none;
     margin: auto 32px;
     font-size: 20px;
+    @include ds-screen-size("medium") {
+        display: block;
+    }
   }
   nav {
     margin: 0 32px;
