@@ -28,6 +28,12 @@
 }
 
 .buttonlist {
-  width: 50%;
-  margin: 16px auto;
+  display: flex;
+  align-items: center;
+
+  @include ds-screen-size('medium') {
+    width: 50%;
+    margin: 16px auto;
+  }
+
 }

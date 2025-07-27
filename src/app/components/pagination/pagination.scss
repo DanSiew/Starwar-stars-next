@@ -1,0 +1,77 @@
+@use '../../styles/breakpoint' as *;
+
+.pagination-container {
+  display: flex;
+  list-style-type: none;
+
+  .pagination-item {
+    padding: 0 12px;
+    height: 32px;
+    text-align: center;
+    margin: auto 4px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    letter-spacing: 0.01071em;
+    border-radius: 16px;
+    line-height: 1.43;
+    font-size: 14px;
+    min-width: 32px;
+
+    &:hover {
+      background-color: rgba(0, 100, 255, 0.3);
+      cursor: pointer;
+    }
+
+    &--dots:hover {
+      background-color: transparent;
+      cursor: default;
+    }
+
+    &--selected {
+      background-color: rgba(0, 100, 255, 0.7);
+      color: white;
+    }
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.5;
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+
+    &--words {
+      min-width: 100px;
+      color: white;
+      background-color: #001cb0;
+
+      @include ds-screen-size('medium') {
+        color: rgba(0, 0, 0, 0.87);
+        background-color: transparent;
+        min-width: 0;
+      }
+    }
+
+    &--previous {
+      padding: 8px 16px;
+
+      @include ds-screen-size('medium') {
+        padding: 0;
+        font-weight: 600;
+      }
+    }
+
+    &--next {
+      padding: 8px 24px;
+
+      @include ds-screen-size('medium') {
+        padding: 0;
+        font-weight: 600;
+      }
+    }
+  }
+}

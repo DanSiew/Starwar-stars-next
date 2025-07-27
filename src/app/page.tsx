@@ -7,13 +7,14 @@ import * as starwarSlice from "./store/features/starwarSlice";
 import { useRouter } from "next/navigation";
 import { AppDispatch, RootState } from "./store/store";
 import { loadPeopleData } from "./store/features/peopleSlice";
-import PageNumber from "./components/page-numbers/pageNumber";
 import useWindowSize from "@rooks/use-window-size";
 import Loading from "./components/loading/loading";
 import Alert from "./components/alert/alert";
+import Pagination from "./components/pagination/pagination";
 
 export default function Home() {
   const { innerWidth } = useWindowSize();
+  const smallWidth = innerWidth && innerWidth <= 720;
   const starwarState = useSelector((state: RootState) => state.starwar);
   const [pageNum, setPageNum] = useState<number>(starwarState.currentPage);
   const dispatch = useDispatch<AppDispatch>();
@@ -31,10 +32,6 @@ export default function Home() {
       fetchData();
     }
   }, [pageNum]);
-
-  const handleFetch = (numPage: number) => {
-    setPageNum(numPage);
-  };
 
   const handleClick = (index: number) => {
     let data = starwarState?.data?.results[index];
@@ -60,7 +57,10 @@ export default function Home() {
         </div>
         <div>
           {starwarState && starwarState.status === "failed" && (
-            <Alert alertText="Something gone wrong! Please try again" type="danger" />
+            <Alert
+              alertText="Something gone wrong! Please try again"
+              type="danger"
+            />
           )}
         </div>
         {starwarState && starwarState.status === "succeeded" && (
@@ -72,11 +72,12 @@ export default function Home() {
             starwarState.status === "succeeded" &&
             starwarState.data &&
             starwarState.data.pageNumber.length > 0 && (
-              <PageNumber
-                pageNumber={starwarState.data.pageNumber}
+              <Pagination
+                onPageChange={(page: number) => setPageNum(page)}
+                totalCount={starwarState.data?.count}
                 currentPage={pageNum}
-                windowWidth={innerWidth ? innerWidth : 0}
-                handleFetch={handleFetch}
+                pageSize={10}
+                isSmall={smallWidth}
               />
             )}
         </div>

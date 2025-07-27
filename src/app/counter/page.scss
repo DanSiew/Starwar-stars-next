@@ -7,7 +7,7 @@
 
   @include ds-screen-size('medium') {
     max-width: 900px;
-     margin: 32px auto;
+    margin: 32px auto;
   }
 
   @include ds-screen-size('large') {
@@ -19,8 +19,13 @@
 
 .container {
   display: flex;
-  
+  flex-direction: column;
+
+  @include ds-screen-size('medium') {
+    flex-direction: row;
+  }
+
   Button {
-    margin: 0 8px;
+    margin: 8px 8px;
   }
 }
