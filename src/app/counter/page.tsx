@@ -22,7 +22,7 @@ export default function Counter() {
           type="button"
           size="small"
           buttonType="primary"
-          index={0}
+          event=""
           handleClick={() => dispatch(increment())}
         />
         <Button
@@ -30,7 +30,7 @@ export default function Counter() {
           type="button"
           size="small"
           buttonType="primary"
-          index={0}
+          event=""
           handleClick={() => dispatch(decrement())}
         />
         <Button
@@ -38,7 +38,7 @@ export default function Counter() {
           type="button"
           size="small"
           buttonType="primary"
-          index={0}
+          event=""
           handleClick={() => dispatch(incrementByAmount(5))}
         />
       </div>

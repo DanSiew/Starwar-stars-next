@@ -2,10 +2,10 @@ import "./button.scss";
 
 export default function Button(props: {
   label: string;
-  type: "submit" | "reset" | "button" | undefined;
+  type: "submit" | "reset" | "button" ;
   size: string;
   buttonType: string;
-  index: number;
+  event: number | string;
   handleClick: (event: any) => void;
 }) {
   return (
@@ -17,7 +17,7 @@ export default function Button(props: {
         `ds-button--${props.size}`,
         `ds-button--${props.buttonType}`,
       ].join(" ")}
-      onClick={() => props.handleClick(props.index)}
+      onClick={() => props.handleClick(props.event)}
     >
       {props.label}
     </button>

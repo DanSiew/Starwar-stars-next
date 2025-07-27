@@ -72,7 +72,7 @@ function StarwarPage() {
             type="button"
             size="medium"
             buttonType="primary"
-            index={0}
+            event=""
             handleClick={() => ""}
           />
         </Link>

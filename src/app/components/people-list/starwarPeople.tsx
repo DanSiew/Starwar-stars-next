@@ -29,7 +29,7 @@ export default function StarwarPeople(props: PeopleListModel) {
                       type="button"
                       size="small"
                       buttonType="primary"
-                      index={key}
+                      event={key}
                       handleClick={handleClick}
                     />
                   </td>

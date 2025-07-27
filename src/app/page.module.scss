@@ -1,7 +1,7 @@
 @use 'styles/breakpoint' as *;
 
 .page {
-  min-height: 100svh;
+  min-height: 90svh;
   font-family: var(--font-geist-sans);
 }
 
@@ -9,7 +9,6 @@
 
 .main {
   margin: 16px;
-  min-height: 100vh;
   align-items: center;
 
   @include ds-screen-size('medium') {
