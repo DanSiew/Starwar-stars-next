@@ -25,8 +25,8 @@
     }
 
     &--dots:hover {
-      background-color: transparent;
-      cursor: default;
+      background-color: rgba(0, 100, 255, 0.3);
+      cursor: pointer;
     }
 
     &--selected {

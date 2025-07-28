@@ -46,10 +46,11 @@ const Pagination = (props: any) => {
 
       {!isSmall &&
         paginationRange &&
-        paginationRange.map((pageNumber: any, index: number) => {
-          if (pageNumber === DOTS) {
+        paginationRange.map((pageNumber: {key:number, value: string}, index: number) => {
+          if (pageNumber.value === DOTS) {
             return (
-              <li key={index} className="pagination-item pagination-item--dots">
+              <li key={index} className="pagination-item pagination-item--dots"
+              onClick={() => onPageChange(pageNumber.key)}>
                 &#8230;
               </li>
             );
@@ -60,13 +61,13 @@ const Pagination = (props: any) => {
               key={index}
               className={[
                 "pagination-item",
-                props.currentPage === pageNumber
+                props.currentPage.toString() === pageNumber.value
                   ? "pagination-item--selected"
                   : "",
               ].join(" ")}
-              onClick={() => onPageChange(pageNumber)}
+              onClick={() => onPageChange(pageNumber.key)}
             >
-              {pageNumber}
+              {pageNumber.value}
             </li>
           );
         })}
