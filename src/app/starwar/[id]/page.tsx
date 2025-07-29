@@ -72,8 +72,6 @@ function StarwarPage() {
             type="button"
             size="medium"
             buttonType="primary"
-            event=""
-            handleClick={() => ""}
           />
         </Link>
       </section>
