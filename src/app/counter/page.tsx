@@ -7,7 +7,7 @@ import {
   incrementByAmount,
 } from "../store/features/counterSlice";
 import { RootState } from "../store/store";
-import Button from "../components/button/button";
+import Button from "../../components/button/button";
 
 export default function Counter() {
   const count = useSelector((state: RootState) => state.counter.value);

@@ -1,5 +1,5 @@
 import { People, PeopleListModel } from "../../models/starwar.model";
-import Button from "../button/button";
+import Button from "../../../components/button/button";
 import "./starwarPeople.scss";
 
 export default function StarwarPeople(props: PeopleListModel) {

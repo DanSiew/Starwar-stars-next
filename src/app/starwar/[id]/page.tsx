@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/app/components/button/button";
+import Button from "@/components/button/button";
 import "./page.scss";
 import { People } from "@/app/models/starwar.model";
 import { getPeopleAsync } from "@/app/store/features/peopleSlice";
@@ -8,8 +8,8 @@ import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Loading from "@/app/components/loading/loading";
-import Alert from "@/app/components/alert/alert";
+import Loading from "@/components/loading/loading";
+import Alert from "@/components/alert/alert";
 
 function StarwarPage() {
   const params = useParams<{ id: string }>();

@@ -8,9 +8,9 @@ import { useRouter } from "next/navigation";
 import { AppDispatch, RootState } from "./store/store";
 import { loadPeopleData } from "./store/features/peopleSlice";
 import useWindowSize from "@rooks/use-window-size";
-import Loading from "./components/loading/loading";
-import Alert from "./components/alert/alert";
-import Pagination from "./components/pagination/pagination";
+import Loading from "../components/loading/loading";
+import Alert from "../components/alert/alert";
+import Pagination from "../components/pagination/pagination";
 
 export default function Home() {
   const { innerWidth } = useWindowSize();
