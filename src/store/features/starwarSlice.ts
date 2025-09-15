@@ -1,4 +1,4 @@
-import { StarwarStateModel } from '@/app/models/starwar.model';
+import { StarwarStateModel } from '@/models/starwar.model';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 

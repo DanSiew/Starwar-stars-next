@@ -1,8 +1,8 @@
 "use client";
 import Button from "@/components/button/button";
 import "./page.scss";
-import { People } from "@/app/models/starwar.model";
-import { getPeopleAsync } from "@/app/store/features/peopleSlice";
+import { People } from "@/models/starwar.model";
+import { getPeopleAsync } from "@/store/features/peopleSlice";
 import { AppDispatch } from "@/app/store/store";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";

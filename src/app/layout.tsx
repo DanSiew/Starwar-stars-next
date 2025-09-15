@@ -2,7 +2,7 @@
 import "./globals.scss";
 import Header from "../components/header/header";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { store } from "../store/store";
 import React from "react";
 
 

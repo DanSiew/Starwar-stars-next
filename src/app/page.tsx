@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
-import StarwarPeople from "./components/people-list/starwarPeople";
+import StarwarPeople from "../components/people-list/starwarPeople";
 import { useSelector, useDispatch } from "react-redux";
-import * as starwarSlice from "./store/features/starwarSlice";
+import * as starwarSlice from "../store/features/starwarSlice";
 import { useRouter } from "next/navigation";
 import { AppDispatch, RootState } from "./store/store";
-import { loadPeopleData } from "./store/features/peopleSlice";
+import { loadPeopleData } from "../store/features/peopleSlice";
 import useWindowSize from "@rooks/use-window-size";
 import Loading from "../components/loading/loading";
 import Alert from "../components/alert/alert";

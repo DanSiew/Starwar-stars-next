@@ -1,4 +1,4 @@
-import { PeopleStateModel } from '@/app/models/starwar.model';
+import { PeopleStateModel } from '@/models/starwar.model';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const INITIAL_STATE: PeopleStateModel = {

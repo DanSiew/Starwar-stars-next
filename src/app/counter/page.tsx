@@ -5,7 +5,7 @@ import {
   increment,
   decrement,
   incrementByAmount,
-} from "../store/features/counterSlice";
+} from "../../store/features/counterSlice";
 import { RootState } from "../store/store";
 import Button from "../../components/button/button";
 
