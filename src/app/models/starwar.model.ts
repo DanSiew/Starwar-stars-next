@@ -23,6 +23,7 @@ export interface People {
     birth_year: string;
     gender: string;
     url: string;
+    detail?: string;
 }
 
 export interface PeopleListModel {
