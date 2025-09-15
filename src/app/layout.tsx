@@ -5,10 +5,6 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import React from "react";
 
-export const metadata = {
-  title: "Starwar stars",
-  description: "A simple app to view starwar stars",
-};
 
 export default function RootLayout({
   children,
